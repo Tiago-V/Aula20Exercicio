@@ -3,7 +3,7 @@ namespace ifood
     public class Cliente
     {
         public string Nome { get; set; }
-        public string EnderecoAtual { get; set; }
+        protected string EnderecoAtual { get; set; }
         public string Pedido { get; set; }
 
         public string MostrarDados(string _nome, string _enderecoAtual){

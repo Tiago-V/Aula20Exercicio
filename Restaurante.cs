@@ -3,8 +3,8 @@ namespace ifood
     public class Restaurante
     {
        public string NomeFantasia { get; set; }
-       public string Endereco { get; set; } 
-       public bool AccPedido { get; set; }
+       protected string Endereco { get; set; } 
+       private bool AccPedido { get; set; }
 
        public string MostrarDados(string _nomeFantasia, string _endereco){
            this.NomeFantasia = _nomeFantasia;
