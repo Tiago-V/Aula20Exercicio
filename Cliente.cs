@@ -3,14 +3,15 @@ namespace ifood
     public class Cliente
     {
         public string Nome { get; set; }
-        protected string EnderecoAtual { get; set; }
+        public string EnderecoAtual { get; set; }
         public string Pedido { get; set; }
 
-        public string MostrarDados(string _nome, string _enderecoAtual){
+        public Cliente(string _nome){
             this.Nome = _nome;
-            this.EnderecoAtual = _enderecoAtual;
+        }
+        public string MostrarDados(){
 
-            return $"Nome do cliente: {_nome}\nEndereço do cliente: {_enderecoAtual}";
+            return $"Nome do cliente: {Nome}\nEndereço do cliente: {EnderecoAtual}\n";
         }
         public void FazerPedido(){
 

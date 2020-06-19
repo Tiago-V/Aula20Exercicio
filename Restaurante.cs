@@ -3,14 +3,15 @@ namespace ifood
     public class Restaurante
     {
        public string NomeFantasia { get; set; }
-       protected string Endereco { get; set; } 
-       private bool AccPedido { get; set; }
+       public string Endereco { get; set; } 
+       public bool AccPedido { get; set; }
 
-       public string MostrarDados(string _nomeFantasia, string _endereco){
+       public string MostrarDados(){
+
+           return $"Nome do restaurante: {NomeFantasia}\nEndereço do restaurante: {Endereco}\n";
+       }
+       public Restaurante(string _nomeFantasia){
            this.NomeFantasia = _nomeFantasia;
-           this.Endereco = _endereco;
-
-           return $"Nome do restaurante: {_nomeFantasia}\nEndereço do restaurante: {_endereco}";
        }
     }
 }

@@ -1,19 +1,39 @@
+using System;
+
 namespace ifood
 {
     public class Pedido
     {
         public string Itens { get; set; }
-        public string Cliente { get; set; }
-        public string Restaurante { get; set; }
+        public Cliente Cliente { get; set; }
+        public Restaurante Restaurante { get; set; }
         public string FormaDePGTO { get; set; }
         public bool PedidoPago { get; set; }
+        public DateTime Horario { get; set; }
 
-        public string EntregarPedido(string _itens, string _formaDePGTO, bool _pedidoPago){
-            this.Itens = _itens;
-            this.FormaDePGTO = _formaDePGTO;
-            this.PedidoPago =  _pedidoPago;
+        public string FazerPedido(){
+            
+            
 
-            return $"Sobre o Pedido\n\nItens: {_itens}\nCliente: {Cliente}\nRestaurante: {Restaurante}\n\nStatus do Pedido\n\nForma de pagamento: {_formaDePGTO}\nPago: {_pedidoPago}";
+            Console.WriteLine("Monte seu lanche: ");
+            
+            Itens = Console.ReadLine();
+
+            return Itens ;
+        }
+
+        public string EntregarPedido(){
+
+            Horario = DateTime.Now;
+
+            Console.WriteLine("Pedido: "+Itens);
+
+            string retorno = "Pedido Entregue!\n";
+            retorno += Restaurante.MostrarDados();
+            retorno += Cliente.MostrarDados();
+            retorno += Horario;
+            
+            return retorno;
         }
     }
 }

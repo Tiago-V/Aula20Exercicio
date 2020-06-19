@@ -6,23 +6,23 @@ namespace ifood
     {
         static void Main(string[] args)
         {
-            Cliente cliente = new Cliente();
-            Restaurante restaurante = new Restaurante();
-            Pedido pedido = new Pedido();
+            Cliente tiago = new Cliente("Tiago");
+            tiago.EnderecoAtual = "Jabaquara";
+            Console.WriteLine( tiago.MostrarDados() );
 
-            Console.WriteLine("Cliente: ");
-            Console.WriteLine(cliente.MostrarDados( "Tiago", "Jabaquara" ));
+            Restaurante subway = new Restaurante("Subway");
+            subway.Endereco = "Plaza Sul";
+            Console.WriteLine( subway.MostrarDados() );
+
+            Pedido pedido1 = new Pedido();
+            pedido1.Cliente = tiago;
+            pedido1.Restaurante = subway;
+            
+            pedido1.FazerPedido();
 
             Console.WriteLine();
 
-            Console.WriteLine("Restaurante: ");
-            Console.WriteLine(restaurante.MostrarDados( "Restaurante Feliz", "Conceição" ));  
-
-            Console.WriteLine();
-
-            pedido.Cliente = cliente.Nome;
-            pedido.Restaurante = restaurante.NomeFantasia;
-            Console.WriteLine(pedido.EntregarPedido("Batata Frita", "Cartão de Débito", true ));
+            Console.WriteLine( pedido1.EntregarPedido() );
         }
     }
 }
